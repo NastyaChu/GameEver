@@ -28,6 +28,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         NoticePlayerUpdate();
+        ChaseUpdate();
         PatrolUpdate();
     }
     private void NoticePlayerUpdate()
@@ -52,9 +53,19 @@ public class EnemyAI : MonoBehaviour
     }
     private void PatrolUpdate()
     {
-        if (_navMeshAgent.remainingDistance == 0)
+        if (!_isPlayerNoticed)
         {
-            PickNewPatrolPoint();
+            if (_navMeshAgent.remainingDistance == 0)
+            {
+                PickNewPatrolPoint();
+            }
+        }
+    }
+    private void ChaseUpdate()
+    {
+        if (_isPlayerNoticed)
+        {
+            _navMeshAgent.destination = player.transform.position;
         }
     }
 }
