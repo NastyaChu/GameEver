@@ -671,7 +671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035031041}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.49, y: 2.48, z: -8.5}
+  m_LocalPosition: {x: -8.428, y: 2.48, z: -8.324}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1901086345}
@@ -1391,6 +1391,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4153505791774128162, guid: bed5671dfc34c3b4db964be922a3f4bf,
+        type: 3}
+      propertyPath: cameraLink
+      value: 
+      objectReference: {fileID: 2070836684}
     - target: {fileID: 5759633018079891592, guid: bed5671dfc34c3b4db964be922a3f4bf,
         type: 3}
       propertyPath: m_Name
@@ -1562,6 +1567,8 @@ GameObject:
   - component: {fileID: 1816385478}
   - component: {fileID: 1816385477}
   - component: {fileID: 1816385476}
+  - component: {fileID: 1816385480}
+  - component: {fileID: 1816385479}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1598,7 +1605,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1625,6 +1632,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1816385479
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816385475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.08
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.49, z: 0}
+--- !u!114 &1816385480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816385475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f397d5742df4e354c875d921313bb22f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 100
 --- !u!1 &1886113311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,6 +2065,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019969849}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &2070836684 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 5759633016970058976, guid: bed5671dfc34c3b4db964be922a3f4bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1647577327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124823654
 GameObject:
   m_ObjectHideFlags: 0
