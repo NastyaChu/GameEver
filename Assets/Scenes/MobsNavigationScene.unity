@@ -1391,6 +1391,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3310952636958615165, guid: bed5671dfc34c3b4db964be922a3f4bf,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4153505791774128162, guid: bed5671dfc34c3b4db964be922a3f4bf,
         type: 3}
       propertyPath: cameraLink
@@ -1595,6 +1600,7 @@ MonoBehaviour:
   - {fileID: 1035031042}
   player: {fileID: 720924663}
   viewAngle: 90
+  damage: 30
 --- !u!195 &1816385477
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1609,7 +1615,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

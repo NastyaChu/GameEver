@@ -12,6 +12,7 @@ public class EnemyAI : MonoBehaviour
 
     private NavMeshAgent _navMeshAgent;
     private bool _isPlayerNoticed;
+    private PlayerHealth _playerHealth;
 
 
     void Start()
@@ -24,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     private void InitComponentLinks()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        _playerHealth = player.GetComponent<PlayerHealth>();
     }
    
     void Update()
@@ -38,11 +40,9 @@ public class EnemyAI : MonoBehaviour
     {
         if (_isPlayerNoticed)
         {
-            Debug.Log("remainingDistance: " + (_navMeshAgent.remainingDistance) + " stoppingDistance:" + _navMeshAgent.stoppingDistance);
             if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance)
             {
-                Debug.Log("Атака: " + (damage)+ " Здоровье:" + player.GetComponent<PlayerHealth>().value);
-                player.GetComponent<PlayerHealth>().DealDamage(damage * Time.deltaTime);
+                _playerHealth.DealDamage(damage * Time.deltaTime);
 
             }
         }
