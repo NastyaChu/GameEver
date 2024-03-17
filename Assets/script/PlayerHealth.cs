@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     public float value = 100;
     public RectTransform valueRectTransform;
 
+    public Animator animator;
+
     public GameObject gameplayUI;
     public GameObject gameOverScreen;
 
@@ -36,6 +38,8 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerController>().enabled = false;
         GetComponent<MagicballCaster>().enabled = false;
         GetComponent<CameraRotation>().enabled = false;
+
+        animator.SetTrigger("death");
     }
     private void DrawHealthBar()
     {

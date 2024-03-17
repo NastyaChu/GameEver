@@ -125,7 +125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073518694393353954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.594, y: 0.958, z: 0.031}
+  m_LocalPosition: {x: 0.08, y: 0.958, z: 0.496}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5759633018079891598}
@@ -384,8 +384,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5, y: 0.5999985}
-  m_SizeDelta: {x: 1042.3865, y: 508.01038}
+  m_AnchoredPosition: {x: -5.9, y: 3.1}
+  m_SizeDelta: {x: 1141.2703, y: 523.3546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8216818313933422860
 CanvasRenderer:
@@ -690,6 +690,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!95 &2095323911007667582
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841152340497781306}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 369897f8b2cf82c4aa76e1688a0cfceb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5222543089506819879
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,8 +929,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 9.8
-  jumpForce: 10
+  jumpForce: 6
   speed: 2
+  animator: {fileID: 2095323911007667582}
 --- !u!143 &5759633018079891597
 CharacterController:
   m_ObjectHideFlags: 0
@@ -927,7 +947,7 @@ CharacterController:
   m_Radius: 0.23
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.72, z: 0}
 --- !u!114 &3812354275616426907
@@ -959,6 +979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 100
   valueRectTransform: {fileID: 3945770533758129427}
+  animator: {fileID: 2095323911007667582}
   gameplayUI: {fileID: 5222543089506819879}
   gameOverScreen: {fileID: 2827483736204288244}
 --- !u!1 &6377027378624500804
@@ -1179,6 +1200,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d7e2ee48c199514883aca5fd4e49b9f, type: 3}
+--- !u!1 &4841152340497781306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d7e2ee48c199514883aca5fd4e49b9f,
+    type: 3}
+  m_PrefabInstance: {fileID: 5759633017067204459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5216552429966559360 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d7e2ee48c199514883aca5fd4e49b9f,

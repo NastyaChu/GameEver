@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public float speed;
 
+    public Animator animator;
+
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
 
@@ -20,34 +22,56 @@ public class PlayerController : MonoBehaviour
  
     void Update()
     {
-        _moveVector = Vector3.zero;
+        MoventUbdate();
+        JampUbdate();
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetMouseButtonDown(0))
         {
-            _moveVector += transform.forward;
+            animator.SetTrigger("attak");
         }
+    }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            _moveVector += transform.right;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            _moveVector -= transform.forward;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            _moveVector -= transform.right;
-        }
-        //Jamp
+    private void JampUbdate()
+    {
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
             _fallVelocity = 0;
             _fallVelocity -= jumpForce;
+
+            animator.SetTrigger("jamp");
+        }
+    }
+
+    private void MoventUbdate()
+    {
+        _moveVector = Vector3.zero;
+        var ranDirection = 0;
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            _moveVector += transform.forward;
+            ranDirection = 1;
         }
 
+        if (Input.GetKey(KeyCode.D))
+        {
+    _moveVector += transform.right;
+            ranDirection = 3;
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+    _moveVector -= transform.forward;
+            ranDirection = 2;
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+    _moveVector -= transform.right;
+            ranDirection = 4;
+        }
+
+        animator.SetInteger("run direction", ranDirection);
     }
     void FixedUpdate()
     {
