@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagicballCaster : MonoBehaviour
 {
+
     public Magicball magicballPrefab;
     public Transform magicballSourceTransform;
      private void Update()
@@ -12,5 +13,6 @@ public class MagicballCaster : MonoBehaviour
         {
             Instantiate(magicballPrefab, magicballSourceTransform.position, magicballSourceTransform.rotation);
         }
+
     }
 }
